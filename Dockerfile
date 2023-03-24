@@ -41,11 +41,11 @@ COPY ./config/laravel.php.ini /usr/local/etc/php/conf.d/laravel.php.ini
 COPY ./config/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 COPY start.sh /usr/local/bin/start
 
-RUN mkdir -p /var/www/zoom-recordings/current/public
+RUN mkdir -p /var/www/expense/current/public
 
 RUN a2ensite laravel.conf && a2dissite 000-default.conf && chmod u+x /usr/local/bin/start && a2enmod rewrite
 	
 # Setup working directory
-WORKDIR /var/www/zoom-recordings
+WORKDIR /var/www/expense
 
 CMD ["/usr/local/bin/start"]

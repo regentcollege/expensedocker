@@ -7,7 +7,7 @@ env=${APP_ENV:-production}
 
 if [ "$env" != "local" ]; then
     echo "Caching configuration..."
-    (cd /var/www/zoom-recordings/current && php artisan config:cache && php artisan view:cache)
+    (cd /var/www/expense/current && php artisan config:cache && php artisan view:cache)
 fi
 
 if [ "$role" = "app" ]; then
@@ -22,7 +22,7 @@ elif [ "$role" = "scheduler" ]; then
 
     while [ true ]
     do
-      php /var/www/zoom-recordings/current/artisan schedule:run --verbose --no-interaction &
+      php /var/www/expense/current/artisan schedule:run --verbose --no-interaction &
       sleep 60
     done
 
