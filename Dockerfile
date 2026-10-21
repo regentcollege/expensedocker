@@ -1,5 +1,5 @@
 # Set the base image for subsequent instructions
-FROM php:8.3.36-apache
+FROM php:8.3.36-apache-trixie
 
 # Install dependencies
 RUN apt-get update && pecl install redis && apt-get install -y \
